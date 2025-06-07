@@ -1,2 +1,2 @@
-# C-Compiler
+# FCC (Fortran C Compiler)
 I'm doing this for fun... might as well... oh and im writing it in fortran too... i've never used fortran untill today...
