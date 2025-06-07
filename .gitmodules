@@ -1,0 +1,3 @@
+[submodule "libs/f90getopt"]
+	path = libs/f90getopt
+	url = https://github.com/PKM74/f90getopt
