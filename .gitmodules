@@ -1,3 +1,6 @@
 [submodule "libs/f90getopt"]
 	path = libs/f90getopt
 	url = https://github.com/PKM74/f90getopt
+[submodule "libs/tokenizer"]
+	path = libs/tokenizer
+	url = https://github.com/PKM74/Fortran-Tokenizer
