@@ -1,5 +1,5 @@
 FC=gfortran
-FFLAGS=-std=f2003
+FFLAGS=-std=f2008 -fdec-structure
 BUILD_DIR=build
 SRC_DIR=src
 LIBS_DIR=libs
@@ -15,7 +15,8 @@ LIBS_FORTRAN = $(wildcard $(LIBS_DIR)/*.f90) \
 				$(wildcard $(LIBS_DIR)/*/*.F90) \
 			  	$(wildcard $(LIBS_DIR)/*/*/*.F90) \
 			  	$(wildcard $(LIBS_DIR)/*/*/*/*.F90) \
-				$(wildcard $(SRC_DIR)/modules/*.f90)
+				$(wildcard $(SRC_DIR)/modules/*.f90) \
+				$(wildcard $(SRC_DIR)/modules/*.F90)
 
 .phony: all main clean always
 
