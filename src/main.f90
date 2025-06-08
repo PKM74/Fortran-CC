@@ -15,8 +15,7 @@ program main
     ! local variables
     character(len=1) :: short ! getopt-character
     character(:), allocatable :: output
-    character(:), allocatable :: input
-    character(:), allocatable :: tokenized_input
+    character(:), allocatable :: input, tokenized_input, input_deliminators
 
     integer :: pos
 
@@ -50,14 +49,13 @@ program main
                     exit
                 end if
                 print*, "Input Data: ", input
-                call prttkn0(trim(input), '#')
-                ! call engtkn0(input, '', pos, tokenized_input)
-                ! print*, "Tokenized Input Data: ", tokenized_input
+                call tokenize(input, len(input), input_deliminators, tokenized_input)
+                print*, "Tokenized Input Data: ", tokenized_input
                 
             case("h")
                 print*, "USAGE: -i --input-file | -o --output-file | -v --version | -h --help"
             case("v")
-                print*, "Fortran C Compiler Version RD-00002"
+                print*, "Fortran C Compiler Version RD-00003"
         end select
     end do
     ! END processing options

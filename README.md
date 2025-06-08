@@ -4,3 +4,8 @@ I'm doing this for fun... might as well... oh and im writing it in fortran too..
 This is PURE fucking masochism...
 
 im not explaining that sentence...
+
+## Build Requirements
+- FYPP
+- fortran_stdlibs
+- gfortran
