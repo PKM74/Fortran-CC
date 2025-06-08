@@ -21,6 +21,8 @@ set(MODULES   src/tokenizer.f90
 
 add_library(f90getopt SHARED libs/f90getopt/f90getopt.F90)
 
+add_subdirectory(libs/vector ${CMAKE_CURRENT_BINARY_DIR}/vector)
+
 add_library(${PROJECT_NAME}-lib SHARED ${MODULES})
 
 add_executable(${PROJECT_NAME} src/main.f90)
@@ -33,6 +35,7 @@ target_link_libraries(
     ${PROJECT_NAME}
     PUBLIC
     f90getopt
+    fortran-vector
     ${PROJECT_NAME}-lib
     PRIVATE
     fortran_stdlib::fortran_stdlib
