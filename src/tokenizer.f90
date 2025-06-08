@@ -3,6 +3,8 @@
 
 module tokenizer
     use stdlib_strings
+    use vector
+    use, intrinsic :: iso_c_binding
     implicit none
     contains
 
@@ -12,7 +14,8 @@ module tokenizer
         character(:), allocatable, intent(out) :: tokens
         character(string_length), intent(in) :: input_string
 
-        character(:), dimension(:), allocatable :: buffer
+        type(vec) :: buf
+        character :: buffer
         character(1) :: c
         integer :: i
         
@@ -24,19 +27,29 @@ module tokenizer
         do while (i < string_length)
             c = slice(input_string, i, i+1)
             if (token_isalpha(c) == 1) then
+                call buf%push_back(c) ! i think this is correct?
                 i = i + 1
-            endif
+                do while (token_isalnum(slice(input_string, 1, i+1)) == 1)
+                    call buf%push_back(slice(input_string, 1, i+1))
+                    i = i + 1
+                end do
+                i = i - 1
+                ! call vector_get(buf, 1) ! FUCK FORTRAN VECTOR...
+                if (buffer == 'return') then
+
+                end if
+            end if
         end do 
 
     end subroutine tokenize
 
     integer function token_isalpha(input_character) result(res)
-        character(1) :: input_character
+        character(1), intent(in) :: input_character
 
         if ( input_character == 'a') then
         elseif (input_character == 'b') then
         elseif (input_character == 'c') then
-        elseif (input_character =='d') then
+        elseif (input_character == 'd') then
         elseif (input_character == 'e') then
         elseif (input_character == 'f') then
         elseif (input_character == 'g') then
@@ -96,7 +109,7 @@ module tokenizer
     end function token_isalpha
 
     integer function token_isalnum(input_character) result(res)
-        character(1) :: input_character
+        character(1), intent(in) :: input_character
 
         if ( input_character == 'a') then
         elseif (input_character == 'b') then

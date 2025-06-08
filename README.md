@@ -11,3 +11,4 @@ im not explaining that sentence...
 - gfortran
 - CMake
 - BLAS (Needed for STDLIBS)
+- LAPACK (Needed for STDLIBS)
