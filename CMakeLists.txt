@@ -35,8 +35,8 @@ target_link_libraries(
     ${PROJECT_NAME}
     PUBLIC
     f90getopt
-    fortran-vector
     ${PROJECT_NAME}-lib
     PRIVATE
+    fortran-vector
     fortran_stdlib::fortran_stdlib
 )
