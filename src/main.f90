@@ -45,6 +45,7 @@ program main
                 print*, "Output File: ", trim(optarg) 
             case("i")
                 print*, "Input File: ",  trim(optarg)
+                print*, "Test Char: ", token_isalpha('A')
                 if (filecontents(optarg, input) /= 0) then
                     exit
                 end if
