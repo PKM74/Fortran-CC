@@ -22,7 +22,7 @@ module tokenizer
         end if
 
         do while (i < string_length)
-            call slice_string(input_string, i, i+1)
+            c = slice(input_string, i, i+1)
             i = i + 1
         end do 
 

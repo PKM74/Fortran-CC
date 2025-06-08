@@ -7,5 +7,7 @@ im not explaining that sentence...
 
 ## Build Requirements
 - FYPP
-- fortran_stdlibs
+- fortran stdlibs
 - gfortran
+- CMake
+- BLAS (Needed for STDLIBS)

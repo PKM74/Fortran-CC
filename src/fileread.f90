@@ -18,6 +18,7 @@ module fileread
         if (.not. exists) then
             print*, "Input File Not Found!"
             filecontents = 1
+            return
         end if
         open(unit=1, file=trim(filename), status='old', action='read', form='formatted')
         allocate(character(len=input_size)::input_buffer)
